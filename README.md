@@ -1,4 +1,4 @@
-# Mass-Downloader
+# Mass-Image-Downloader
 A browser extension which allows for you to download all images that are currently on the page. <br>
 Easy to change which images will be downloaded with the selection/deselection system and the option to remove duplicates. <br>
 Download all images with one click of a button.
