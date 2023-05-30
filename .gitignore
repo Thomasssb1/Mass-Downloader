@@ -1,3 +1,4 @@
 *.env
 *.zip
+*.vscode
 manifest.json
