@@ -2,3 +2,5 @@
 *.zip
 *.vscode
 manifest.json
+*.versions
+firefoxconfig.txt
