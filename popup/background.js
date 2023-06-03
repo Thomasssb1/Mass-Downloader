@@ -3,9 +3,9 @@ const settings = document.getElementById('settings');
 
 btn.addEventListener('click', async function onClick() {
   var imgs = document.getElementsByTagName('img');
-  var imgsrcs = [];
+  var imgSRCs = [];
   for (var i = 0; i < imgs.length; i++) {
-    imgsrcs.push(imgs[i].src);
+    imgSRCs.push(imgs[i].src);
   }
   chrome.tabs.query({ active: true, lastFocusedWindow: true }, function (tab) {
     try {
@@ -14,16 +14,16 @@ btn.addEventListener('click', async function onClick() {
           target: { tabId: tab[0]['id'] },
           func: () => {
             var imgs = document.getElementsByTagName('img');
-            var imgsrcs = [];
+            var imgSRCs = [];
             for (i = 0; i < imgs.length; i++) {
-              imgsrcs.push(imgs[i].src);
+              imgSRCs.push(imgs[i].src);
             }
-            return imgsrcs;
+            return imgSRCs;
           },
         },
         (res) => {
-          chrome.storage.local.set({ imgsrcs: res[0].result });
-          chrome.tabs.create({ url: 'lib/page.html' });
+          chrome.storage.local.set({ imgSRCs: res[0].result });
+          chrome.tabs.create({ url: '../scripts/page.html' });
         }
       );
     } catch (e) {

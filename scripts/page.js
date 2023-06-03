@@ -4,10 +4,10 @@ const download = document.getElementById('download');
 const duplicate = document.getElementById('duplicate');
 var duplicateToggle = false;
 
-chrome.storage.local.get(['imgsrcs'], function (item) {
-  for (i = 0; i < item.imgsrcs.length; i++) {
+chrome.storage.local.get(['imgSRCs'], function (item) {
+  for (i = 0; i < item.imgSRCs.length; i++) {
     var img = document.createElement('img');
-    img.src = item.imgsrcs[i];
+    img.src = item.imgSRCs[i];
     img.style.width = '150px';
     img.style.height = 'auto';
     img.style.borderStyle = 'solid';
@@ -53,26 +53,26 @@ download.addEventListener('click', async function onClick() {
 
 duplicate.addEventListener('click', async function onClick() {
   if (!duplicateToggle) {
-    chrome.storage.local.get(['imgsrcs'], function (item) {
-      var imgsrcs = item.imgsrcs;
+    chrome.storage.local.get(['imgSRCs'], function (item) {
+      var imgSRCs = item.imgSRCs;
       j = 0;
       while (document.getElementsByTagName('img').length > 1) {
         document.getElementById(j).remove();
         document.getElementById('divider-' + j).remove();
         j++;
       }
-      var uniqueimgs = [...new Set(imgsrcs)];
-      uniqueimgs = uniqueimgs.filter(function (value, index, arr) {
+      var uniqueIMGs = [...new Set(imgSRCs)];
+      uniqueIMGs = uniqueIMGs.filter(function (value, index, arr) {
         return (
           value !=
           'chrome-extension://oggkcffnmfbaojfnbjfnikjmdbdepjle/rdshckmockup.png'
         );
       });
-      console.log(imgsrcs);
-      console.log(uniqueimgs);
-      for (k = 0; k < uniqueimgs.length; k++) {
+      console.log(imgSRCs);
+      console.log(uniqueIMGs);
+      for (k = 0; k < uniqueIMGs.length; k++) {
         var img = document.createElement('img');
-        img.src = uniqueimgs[k];
+        img.src = uniqueIMGs[k];
         img.style.width = '150px';
         img.style.height = 'auto';
         img.style.borderStyle = 'solid';
@@ -96,17 +96,17 @@ duplicate.addEventListener('click', async function onClick() {
       document.getElementById('divider-' + j).remove();
       j++;
     }
-    chrome.storage.local.get(['imgsrcs'], function (item) {
-      var imgsrcs = item.imgsrcs;
-      imgsrcs = imgsrcs.filter(function (value, index, arr) {
+    chrome.storage.local.get(['imgSRCs'], function (item) {
+      var imgSRCs = item.imgSRCs;
+      imgSRCs = imgSRCs.filter(function (value, index, arr) {
         return (
           value !=
           'chrome-extension://oggkcffnmfbaojfnbjfnikjmdbdepjle/rdshckmockup.png'
         );
       });
-      for (i = 0; i < imgsrcs.length; i++) {
+      for (i = 0; i < imgSRCs.length; i++) {
         var img = document.createElement('img');
-        img.src = imgsrcs[i];
+        img.src = imgSRCs[i];
         img.style.width = '150px';
         img.style.height = 'auto';
         img.style.borderStyle = 'solid';
