@@ -1,5 +1,4 @@
 const btn = document.getElementById('downloadCurrent');
-const settings = document.getElementById('settings');
 
 btn.addEventListener('click', async function onClick() {
   var imgs = document.getElementsByTagName('img');
@@ -30,8 +29,4 @@ btn.addEventListener('click', async function onClick() {
       console.log(e.name);
     }
   });
-});
-
-settings.addEventListener('click', function onClick() {
-  browser.tabs.create({ url: 'about:preferences#general' });
 });
