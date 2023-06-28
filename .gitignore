@@ -1,12 +1,5 @@
 *.env
-*.zip
-*.vscode
+.vscode
 manifest.json
-*.versions
-promo.mp4
-marquee.png
-smallpromo.png
-1.png
-2.png
-3.png
-4.png
+.versions
+thumbnails
