@@ -6,6 +6,7 @@ var duplicateToggle = false;
 
 chrome.storage.local.get(['imgSRCs'], function (item) {
   for (i = 0; i < item.imgSRCs.length; i++) {
+    console.log(item.imgSRCs[i]);
     var img = document.createElement('img');
     img.src = item.imgSRCs[i];
     img.style.width = '150px';
@@ -127,7 +128,7 @@ duplicate.addEventListener('click', async function onClick() {
 });
 
 window.onclick = (e) => {
-  if ((e.target.id = parseInt(e.target.id, 10))) {
+  if ((e.target.id == parseInt(e.target.id, 10))) {
     if (document.getElementById(e.target.id).style.borderColor == 'green') {
       document.getElementById(e.target.id).style.borderColor = 'red';
     } else {
