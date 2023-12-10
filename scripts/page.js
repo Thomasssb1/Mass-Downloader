@@ -153,7 +153,7 @@ duplicate.addEventListener('click', async function onClick() {
 });
 
 window.onclick = (e) => {
-  if ((e.target.id = parseInt(e.target.id, 10))) {
+  if ((e.target.id == parseInt(e.target.id, 10))) {
     if (document.getElementById(e.target.id).style.borderColor == 'green') {
       document.getElementById(e.target.id).style.borderColor = 'red';
     } else {
