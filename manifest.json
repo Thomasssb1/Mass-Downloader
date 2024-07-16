@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Mass Image Downloader",
   "description": "Download all images on one page in one click.",
-  "version": "1.41",
+  "version": "1.42",
   "action": {
     "default_popup": "popup/popup.html",
     "default_icon": {
