@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Mass Image Downloader",
+  "description": "Download all images on one page in one click.",
+  "version": "1.2",
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/prod/icon16.png",
+      "32": "icons/prod/icon32.png",
+      "48": "icons/prod/icon48.png",
+      "128": "icons/prod/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/prod/icon16.png",
+    "32": "icons/prod/icon32.png",
+    "48": "icons/prod/icon48.png",
+    "128": "icons/prod/icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "downloads",
+    "scripting",
+    "storage"
+  ]
+}
